@@ -1,0 +1,470 @@
+# PHASE 1
+# Stagecraft Core (non-graphical)
+apt-get install jackd2 jack-tools jack-midi-clock alsa-base alsa-firmware-loaders alsamixer aj-snapshot liblo7 python3-liblo openssh-server
+
+#not sure if these are needed in final version
+apt-get install suckless-tools # this is dmenu
+apt-get install software-properties-common && apt-get update   # support for Ubuntu PPAs
+
+
+________________________________________________________________________________________
+# next phase will still need to include nsmd + Stagecraft Session manager, Soundguy, etc!
+
+
+________________________________________________________________________________________
+# Phase 2: The Graphical Shit
+apt-get install nodm i965-va-driver xinit xserver-xorg-input-all xserver-xorg-video-intel
+sudo dpkg-reconfigure keyboard-configuration 
+# (to enable ctrl + alt + backspace)
+
+	
+
+________________________________________________________________________________________
+# PHASE 3: LXQT STUFF - QT5
+# PISS!!
+# This installs QT5 stuff. grr! 
+# I am going to have to fork the lubuntu PPA and make a changes
+# file in my own to have it configure everything with qmake-qt4
+
+exit 1
+add-apt-repository ppa:lubuntu-dev/lubuntu-daily && apt-get update
+
+[lxqt minimal environment w/admin stuff]
+26 megs compressed
+100 megs uncompressed
+
+apt-get install pcmanfm-qt lxqt-config lxqt-config-randr lxqt-session lxqt-runner lxqt-admin lxqt-globalkeys lxqt-power lxqt-panel lxqt-powermanagement lxqt-notificationd lxqt-openssh-askpass
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  alsa-base alsa-utils hicolor-icon-theme libasound2 libasound2-data
+  libatk1.0-0 libatk1.0-data libauthen-sasl-perl libegl1-mesa
+  libegl1-mesa-drivers libencode-locale-perl libexif12 libfile-listing-perl
+  libfm-data libfm-extra4 libfm-gtk-data libfm-gtk4 libfm-modules libfm-qt5-1
+  libfm-qt5-data libfm4 libfont-afm-perl libgbm1 libgdk-pixbuf2.0-0
+  libgdk-pixbuf2.0-common libgles2-mesa libgtk2.0-0 libgtk2.0-bin
+  libgtk2.0-common libhtml-form-perl libhtml-format-perl libhtml-parser-perl
+  libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl
+  libhttp-daemon-perl libhttp-date-perl libhttp-message-perl
+  libhttp-negotiate-perl libicu52 libio-html-perl libio-socket-inet6-perl
+  libio-socket-ssl-perl libjasper1 libkf5guiaddons5 libkf5windowsystem-data
+  libkf5windowsystem5 liblwp-mediatypes-perl liblwp-protocol-https-perl
+  liblxqt-data liblxqt-mount-qt5-0 liblxqt0 liblxqt5-0 liblxqt5-data
+  libmailtools-perl libmenu-cache-bin libmenu-cache3 libnet-dbus-perl
+  libnet-http-perl libnet-smtp-ssl-perl libnet-ssleay-perl liboobs-1-5
+  libopenvg1-mesa libqt5core5a libqt5dbus5 libqt5gui5 libqt5script5 libqt5svg5
+  libqt5widgets5 libqt5x11extras5 libqt5xdg-data libqt5xdg1 libqt5xml5
+  libqtxdg-data libqtxdg1 libsamplerate0 libsensors4 libsocket6-perl
+  libstatgrab9 libsysstat-qt5-0 libtie-ixhash-perl liburi-perl
+  libwayland-client0 libwayland-egl1-mesa libwayland-server0 libwww-perl
+  libwww-robotrules-perl libxcb-dpms0 libxcb-screensaver0 libxcb-xkb1
+  libxcursor1 libxkbcommon-x11-0 libxkbcommon0 libxml-parser-perl
+  libxml-twig-perl libxml-xpathengine-perl linux-sound-base lm-sensors
+  lxmenu-data system-tools-backends
+Suggested packages:
+  apmd alsa-oss oss-compat libasound2-plugins libdigest-hmac-perl
+  libgssapi-perl gnome-exe-thumbnailer evince librsvg2-common gvfs
+  libdata-dump-perl libjasper-runtime libcrypt-ssleay-perl libauthen-ntlm-perl
+  libunicode-map8-perl libunicode-string-perl xml-twig-tools fancontrol
+  sensord read-edid i2c-tools
+Recommended packages:
+  icu-tools
+The following NEW packages will be installed:
+  alsa-base alsa-utils hicolor-icon-theme libasound2 libasound2-data
+  libatk1.0-0 libatk1.0-data libauthen-sasl-perl libegl1-mesa
+  libegl1-mesa-drivers libencode-locale-perl libexif12 libfile-listing-perl
+  libfm-data libfm-extra4 libfm-gtk-data libfm-gtk4 libfm-modules libfm-qt5-1
+  libfm-qt5-data libfm4 libfont-afm-perl libgbm1 libgdk-pixbuf2.0-0
+  libgdk-pixbuf2.0-common libgles2-mesa libgtk2.0-0 libgtk2.0-bin
+  libgtk2.0-common libhtml-form-perl libhtml-format-perl libhtml-parser-perl
+  libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl
+  libhttp-daemon-perl libhttp-date-perl libhttp-message-perl
+  libhttp-negotiate-perl libicu52 libio-html-perl libio-socket-inet6-perl
+  libio-socket-ssl-perl libjasper1 libkf5guiaddons5 libkf5windowsystem-data
+  libkf5windowsystem5 liblwp-mediatypes-perl liblwp-protocol-https-perl
+  liblxqt-data liblxqt-mount-qt5-0 liblxqt0 liblxqt5-0 liblxqt5-data
+  libmailtools-perl libmenu-cache-bin libmenu-cache3 libnet-dbus-perl
+  libnet-http-perl libnet-smtp-ssl-perl libnet-ssleay-perl liboobs-1-5
+  libopenvg1-mesa libqt5core5a libqt5dbus5 libqt5gui5 libqt5script5 libqt5svg5
+  libqt5widgets5 libqt5x11extras5 libqt5xdg-data libqt5xdg1 libqt5xml5
+  libqtxdg-data libqtxdg1 libsamplerate0 libsensors4 libsocket6-perl
+  libstatgrab9 libsysstat-qt5-0 libtie-ixhash-perl liburi-perl
+  libwayland-client0 libwayland-egl1-mesa libwayland-server0 libwww-perl
+  libwww-robotrules-perl libxcb-dpms0 libxcb-screensaver0 libxcb-xkb1
+  libxcursor1 libxkbcommon-x11-0 libxkbcommon0 libxml-parser-perl
+  libxml-twig-perl libxml-xpathengine-perl linux-sound-base lm-sensors
+  lxmenu-data lxqt-admin lxqt-config lxqt-config-randr lxqt-globalkeys
+  lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-power
+  lxqt-powermanagement lxqt-runner lxqt-session pcmanfm-qt
+  system-tools-backends lxqt-config
+0 upgraded, 112 newly installed, 0 to remove and 9 not upgraded.
+Need to get 26.4 MB of archives.
+After this operation, 100 MB of additional disk space will be used
+
+# Note - I left out appswitcher, policykit, about, lightdm-greeter and qtplugin
+
+
+#set lxqt-session as window manager (i think!)
+sudo update-alternatives --install /usr/bin/lxqt-session x-window-manager /usr/bin/lxqt-session 9
+
+
+
+#[[[ qterminal ]]] 
+i did qterminal but I wasn't paying attention..=\ oops
+
+#[[[   nodm    ]]]
+nodm seems cool
+it auto logs me in, and relaunches X automatically when it crashes
+need to edit /etc/default/nodm:: 
+-----
+
+# nodm configuration
+
+# Set NODM_ENABLED to something different than 'false' to$
+NODM_ENABLED=true
+
+# User to autologin for
+NODM_USER=stagecraft
+
+# First vt to try when looking for free VTs
+NODM_FIRST_VT=1
+
+# X session
+#NODM_XSESSION=/etc/X11/Xsession
+NODM_XSESSION=/usr/bin/lxqt-session
+
+# Options for the X server
+NODM_X_OPTIONS='-nolisten tcp'
+
+# If an X session will run for less than this time in sec$
+# increasing bit of time before restarting the session.
+NODM_MIN_SESSION_TIME=60
+
+
+________________________________________________________________________________________
+
+{{{ synergy }}}
+libavahi-compat-libdnssd1 libcurl3
+
+[[[ cmst ]]]		1,089 kB	4,334 kB
+bluez cmst connman
+
+[[[ lxqt-session ]]]	584 kB 		3,233 kB
+  libkf5windowsystem-data libkf5windowsystem5 liblxqt5-0 liblxqt5-data
+  libqt5xdg-data libqt5xdg1 libqt5xml5
+
+[[[ juffed ]]] 		2,251 kB	7,251 kB
+  enca juffed libenca0 libqt5scintilla2-11 libqt5scintilla2-l10n librecode0
+
+[[[
+
+
+{{ pbuilder }}
+The following NEW packages will be installed:
+  at binutils build-essential dctrl-tools debootstrap devscripts diffstat
+  distro-info-data dpkg-dev dput fakeroot g++ g++-4.8 gcc gcc-4.8 gettext
+  hardening-includes intltool-debian libalgorithm-diff-perl
+  libalgorithm-diff-xs-perl libalgorithm-merge-perl libapt-pkg-perl
+  libarchive-zip-perl libasan0 libasprintf-dev libatomic1 libautodie-perl
+  libc-dev-bin libc6-dev libclone-perl libcroco3 libdigest-hmac-perl
+  libdistro-info-perl libdpkg-perl libemail-valid-perl liberror-perl
+  libexporter-lite-perl libfakeroot libfile-basedir-perl
+  libfile-fcntllock-perl libgcc-4.8-dev libgettextpo-dev libgettextpo0
+  libgomp1 libio-pty-perl libio-stringy-perl libipc-run-perl
+  libipc-system-simple-perl libitm1 libjson-perl liblist-moreutils-perl
+  libnet-dns-perl libnet-domain-tld-perl libnet-ip-perl
+  libparse-debcontrol-perl libperlio-gzip-perl libquadmath0 libstdc++-4.8-dev
+  libsub-identify-perl libtext-levenshtein-perl libtie-ixhash-perl
+  libunistring0 lintian linux-libc-dev make manpages-dev patch patchutils
+  pbuilder python3-chardet python3-debian python3-magic python3-six t1utils
+  unzip wdiff
+  0 upgraded, 76 newly installed, 0 to remove and 0 not upgraded.
+  Need to get 27.7 MB/27.7 MB of archives
+
+{{ chromium-browser }}  53.8            207 MB
+  chromium-browser-l10n chromium-codecs-ffmpeg-extra gconf-service
+  gconf-service-backend gconf2-common libfile-desktopentry-perl
+  libfile-mimeinfo-perl libgconf-2-4 libgnome-keyring-common libgnome-keyring0
+  libnspr4 libnss3 libnss3-nssdb xdg-utils
+
+[[[ kxstudio ]]]
+# Cleanup previous installations if needed
+sudo rm -f /var/kxstudio/*
+sudo apt-get purge kxstudio-repos
+
+# Install needed tools
+sudo apt-get install software-properties-common wget
+
+# Enable KXStudio repo (press 'Enter' once asked)
+sudo add-apt-repository ppa:kxstudio-debian/kxstudio
+
+# Update software sources
+sudo apt-get update
+
+# Install kxstudio-repos
+sudo apt-get install kxstudio-repos
+
+# Update software sources again
+sudo apt-get update
+
+[[[[[[[[ QT 4 & PYTHON STUFF ]]]]]]]]   20.1 MB / 77.2 MB
+sudo apt-get install python-qt4 python3-pyqt4
+  libpython2.7 libqt4-dbus libqt4-designer libqt4-help libqt4-opengl
+  libqt4-scripttools libqt4-test libqtassistantclient4 libqtwebkit4 python-qt4
+  python-sip python3-pyqt4 python3-sip qdbus qtchooser qt4-qtconfig
+0 upgraded, 15 newly installed, 0 to remove and 3 not upgraded.
+Need to get 20.1 MB of archives.
+After this operation, 77.2 MB of additional disk space will be used.
+
+
+
+~~~~~~~~~~
+[[[ carla-lv2 ]]]
+
+{{ spyder3 }}
+  docutils-common fonts-lyx fonts-mathjax ipython3 ipython3-qtconsole
+  libamd2.3.1 libblas3 libcamd2.3.1 libccolamd2.8.0 libcholmod2.1.2
+  libcolamd2.8.0 libgfortran3 libjs-jquery libjs-mathjax libjs-sphinxdoc
+  libjs-underscore liblapack3 liblcms2-2 libpaper-utils libpaper1 libpgm-5.1-0
+  libtcl8.6 libtk8.6 libumfpack5.6.2 libwebp5 libwebpmux1 libzmq3 pyflakes
+  pylint python-astroid python-egenix-mxdatetime python-egenix-mxtools
+  python-logilab-common python-matplotlib-data python-pkg-resources
+  python-spyderlib-doc python-tk python3-dateutil python3-decorator
+  python3-docutils python3-imaging python3-jedi python3-jinja2
+  python3-markupsafe python3-matplotlib python3-nose python3-numpy
+  python3-pep8 python3-pil python3-pkg-resources python3-psutil
+  python3-pygments python3-pyparsing python3-roman python3-scipy
+  python3-setuptools python3-simplegeneric python3-sphinx python3-spyderlib
+  python3-tk python3-tornado python3-tz python3-zmq sphinx-common
+  
+[[[ lxqt - - extra stuff ]]]  14 megs 
+
+sudo apt-get install lxqt-upanel lxqt-power lxqt-runner lxqt-common lxqt-globalkeys lxqt-openssh-askpass lxqt-policykit lxqt-powermanagement
+  alsa-base alsa-utils consolekit libkf5guiaddons5 liblxqt-data
+  liblxqt-mount-qt5-0 liblxqt0 libpam-ck-connector libpolkit-agent-1-0
+  libpolkit-qt5-1-1 libqt5svg5 libqtxdg-data libqtxdg1 libsensors4
+  libstatgrab9 libsysstat-qt5-0 libxcb-screensaver0 linux-sound-base
+  lm-sensors
+  -menu-xdg
+
+[[[ xoo (xepher frontend ]]]
+        The following extra packages will be installed:
+          libglade2-0 libxcb-xf86dri0 libxcb-xv0 xserver-xephyr
+        The following NEW packages will be installed:
+          libglade2-0 libxcb-xf86dri0 libxcb-xv0 xoo xserver-xephyr
+        0 upgraded, 5 newly installed, 0 to remove and 6 not upgraded.
+        Need to get 2,113 kB of archives.
+        After this operation, 4,107 kB of additional disk space will be used.
+
+((( git )))21 Mb
+
+
+[[[  carla-git ]]]
+        sudo apt-get install carla-lv2 carla-git
+        [sudo] password for stagecraft: 
+        Reading package lists... Done
+        Building dependency tree       
+        Reading state information... Done
+        The following extra packages will be installed:
+          carla-data carla-vst libasyncns0 libflac8 libogg0 libpulse0 libsndfile1
+          libvorbis0a libvorbisenc2 python-cairo python-gobject-2 python-gtk2
+          python3-html5lib python3-isodate python3-pyqt4.qtopengl python3-rdflib
+          python3-sparqlwrapper
+        Suggested packages:
+          pulseaudio python-gobject-2-dbg python-gtk2-doc python-lxml python-genshi
+          python-rdflib-doc
+        The following NEW packages will be installed:
+          carla-data carla-git carla-lv2 carla-vst libasyncns0 libflac8 libogg0
+          libpulse0 libsndfile1 libvorbis0a libvorbisenc2 python-cairo
+          python-gobject-2 python-gtk2 python3-html5lib python3-isodate
+          python3-pyqt4.qtopengl python3-rdflib python3-sparqlwrapper
+        0 upgraded, 19 newly installed, 0 to remove and 6 not upgraded.
+        Need to get 15.5 MB of archives.
+        After this operation, 106 MB of additional disk space will be used.
+        
+[[[[ sudo apt-get install non-session-manager jackd2 ]]]]
+        Reading package lists... Done
+        Building dependency tree       
+        Reading state information... Done
+        The following extra packages will be installed:
+          jackd jackd2-firewire libconfig++9 libffado2 libglibmm-2.4-1c2a
+          libiec61883-0 libjack-jackd2-0 libpulsedsp libraw1394-11 libxml++2.6-2
+          pulseaudio-utils python-dbus python-dbus-dev qjackctl
+        Suggested packages:
+          jack-tools meterbridge libraw1394-doc avahi-daemon python-dbus-doc
+          python-dbus-dbg
+        The following NEW packages will be installed:
+          jackd jackd2 jackd2-firewire libconfig++9 libffado2 libglibmm-2.4-1c2a
+          libiec61883-0 libjack-jackd2-0 libpulsedsp libraw1394-11 libxml++2.6-2
+          non-session-manager pulseaudio-utils python-dbus python-dbus-dev qjackctl
+        0 upgraded, 16 newly installed, 0 to remove and 6 not upgraded.
+        Need to get 5,774 kB of archives.
+        After this operation, 18.8 MB of additional disk space will be used.
+        Do you want to continue? [Y/n] 
+        
+{{{ unetbootin }}}
+        The following NEW packages will be installed:
+          acl at-spi2-core colord dconf-gsettings-backend dconf-service extlinux
+          gconf2 gcr gksu gnome-keyring libatk-bridge2.0-0 libatspi2.0-0
+          libcairo-gobject2 libcolord1 libcolorhug1 libcrypt-passwdmd5-perl libdconf1
+          libgcr-ui-3-1 libgd3 libgksu2-0 libgphoto2-6 libgphoto2-l10n
+          libgphoto2-port10 libgtk-3-0 libgtk-3-bin libgtk-3-common libgtop2-7
+          libgtop2-common libgudev-1.0-0 libgusb2 libieee1284-3 libltdl7
+          libp11-kit-gnome-keyring libpam-gnome-keyring libpolkit-backend-1-0 libsane
+          libsane-common libv4l-0 libv4lconvert0 libvpx1 libwayland-cursor0 memtest86+
+          mtools p11-kit p11-kit-modules p7zip-full policykit-1 syslinux
+          syslinux-common syslinux-themes-debian syslinux-themes-debian-wheezy
+          unetbootin unetbootin-translations
+j        Need to get 11.2 MB of archives.
+        After this operation, 52.6 MB of additional disk space will be used.
+
+{{{ virtualbox-qt }}}
+        The following NEW packages will be installed:
+        acl at-spi2-core colord dconf-gsettings-backend dconf-service extlinux
+        gconf2 gcr gksu gnome-keyring libatk-bridge2.0-0 libatspi2.0-0
+        libcairo-gobject2 libcolord1 libcolorhug1 libcrypt-passwdmd5-perl libdconf1
+        libgcr-ui-3-1 libgd3 libgksu2-0 libgphoto2-6 libgphoto2-l10n
+        libgphoto2-port10 libgtk-3-0 libgtk-3-bin libgtk-3-common libgtop2-7
+        libgtop2-common libgudev-1.0-0 libgusb2 libieee1284-3 libltdl7
+        libp11-kit-gnome-keyring libpam-gnome-keyring libpolkit-backend-1-0 libsane
+        libsane-common libv4l-0 libv4lconvert0 libvpx1 libwayland-cursor0 memtest86+
+        mtools p11-kit p11-kit-modules p7zip-full policykit-1 syslinux
+        syslinux-common syslinux-themes-debian syslinux-themes-debian-wheezy
+        unetbootin unetbootin-translations
+      0 upgraded, 53 newly installed, 0 to remove and 6 not upgraded.
+      Need to get 11.2 MB of archives.
+      After this operation, 52.6 MB of additional disk space will be used.
+      
+    [[{ vlc vlc-plugin-jack }]]
+              The following NEW packages will be installed:
+            fonts-freefont-ttf liba52-0.7.4 libaa1 libaacs0 libass4 libavc1394-0
+            libavcodec54 libavformat54 libavutil52 libbasicusageenvironment0 libbluray1
+            libcddb2 libcdio13 libchromaprint0 libcrystalhd3 libdc1394-22 libdca0
+            libdirac-encoder0 libdirectfb-1.2-9 libdvbpsi8 libdvdnav4 libdvdread4
+            libebml4 libfaad2 libfreerdp1 libgnutls28 libgpm2 libgroupsock1 libgsm1
+            libhogweed2 libiso9660-8 libkate1 libldb1 liblircclient0 liblivemedia23
+            liblua5.2-0 libmad0 libmatroska6 libmodplug1 libmp3lame0 libmpcdec6
+            libmpeg2-4 libmtp-common libmtp-runtime libmtp9 libnettle4 libnotify4
+            libntdb1 libopenjpeg2 libopus0 libpostproc52 libproxy-tools libproxy1
+            libresid-builder0c2a libschroedinger-1.0-0 libsdl-image1.2 libshout3
+            libsidplay2 libsmbclient libspeex1 libspeexdsp1 libssh2-1 libswscale2
+            libtag1-vanilla libtag1c2a libtalloc2 libtar0 libtdb1 libtevent0 libtheora0
+            libts-0.0-0 libtwolame0 libupnp6 libusageenvironment1 libva-x11-1 libva1
+            libvcdinfo0 libvlc5 libvlccore7 libwbclient0 libx264-142 libxcb-composite0
+            libxvidcore4 libzvbi-common libzvbi0 python-talloc samba-libs tsconf vlc
+            vlc-data vlc-nox vlc-plugin-jack vlc-plugin-notify vlc-plugin-pulse
+          0 upgraded, 94 newly installed, 0 to remove and 6 not upgraded.
+          Need to get 27.7 MB of archives.
+          After this operation, 118 MB of additional disk space will be used.
+          
+[[[[ sudo apt-get install cadence cadence-tools ]]]]
+          The following NEW packages will be installed:
+            a2jmidid cadence cadence-data cadence-tools catia claudia jack-capture
+            ladish liblo7 meterbridge python3-dbus.mainloop.qt
+          0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+          Need to get 2,670 kB of archives.
+          After this operation, 7,626 kB of additional disk space will be used.
+
+{{{ krita kritagemini kritasketch }}}
+        The following NEW packages will be installed:
+          aspell aspell-en calligra-data calligra-libs docbook-xml docbook-xsl enchant
+          gdisk glib-networking glib-networking-common glib-networking-services
+          gsettings-desktop-schemas gstreamer1.0-alsa gstreamer1.0-plugins-base
+          gstreamer1.0-plugins-good gstreamer1.0-x hunspell-en-us icoutils kate-data
+          katepart kde-runtime kde-runtime-data kdelibs-bin kdelibs5-data
+          kdelibs5-plugins kdoctools krita krita-data kritagemini kritasketch
+          kubuntu-debug-installer libakonadi-kde4 libakonadiprotocolinternals1
+          libaspell15 libastro1 libatasmart4 libattica0.4 libbluetooth3
+          libcanberra-gstreamer libcanberra0 libcauchy0.0 libcdparanoia0
+          libclucene-core1 libdbusmenu-qt2 libdlrestrictions1 libdv4 libenchant1c2a
+          libexiv2-12 libfftw3-double3 libglew1.10 libglu1-mesa libgps20
+          libgstreamer-plugins-good1.0-0 libhunspell-1.3-0 libical1 libilmbase6
+          libimobiledevice4 libkabc4 libkactivities-bin libkactivities-models1
+          libkactivities6 libkatepartinterfaces4 libkcalcore4 libkcmutils4
+          libkdcraw-data libkdcraw23 libkde3support4 libkdeclarative5 libkdecore5
+          libkdesu5 libkdeui5 libkdewebkit5 libkdnssd4 libkemoticons4 libkfile4
+          libkhtml5 libkio5 libkjsapi4 libkjsembed4 libkldap4 libkmediaplayer4
+          libknewstuff3-4 libknotifyconfig4 libkntlm4 libkparts4 libkpty4
+          libkresources4 libkrosscore4 libkrossui4 libktexteditor4 libkubuntu0
+          libkxmlrpcclient4 libm2mml0.0 libmarblewidget18 libmhash2 libnepomuk4
+          libnepomukcore4abi1 libnepomukquery4a libnepomukutils4 libnl-route-3-200
+          libntrack-qt4-1 libntrack0 libopencolorio1 libopenexr6 libphonon4
+          libphononexperimental4 libplasma3 libplist1 libpolkit-qt-1-1
+          libpoppler-qt4-4 libpoppler44 libqapt2 libqapt2-runtime libqca2
+          libqca2-plugin-ossl libqextserialport1 libqjson0 libqt4-qt3support
+          libqtlocation1 libquazip0 libraptor2-0 librasqal3 libraw9 librdf0
+          libruby1.9.1 libshp1 libsolid4 libsoprano4 libsoup2.4-1 libspnav0
+          libstreamanalyzer0 libstreams0 libthreadweaver4 libtinyxml2.6.2 libudisks2-0
+          libupower-glib1 libusbmuxd2 libutempter0 libvirtodbc0 libvisual-0.4-0
+          libvisual-0.4-plugins libvorbisfile3 libwavpack1 libwlocate0 libxml2-utils
+          libyaml-0-2 libyaml-cpp0.3 marble-data marble-plugins nepomuk-core-data
+          ntrack-module-libnl-0 odbcinst odbcinst1debian2 oxygen-icon-theme phonon
+          phonon-backend-gstreamer phonon-backend-gstreamer-common
+          phonon-backend-gstreamer1.0 plasma-scriptengine-javascript polkit-kde-1
+          qapt-batch ruby ruby1.9.1 sgml-data shared-desktop-ontologies soprano-daemon
+          sound-theme-freedesktop ttf-dejavu-core udisks2 upower usbmuxd
+          virtuoso-minimal virtuoso-opensource-6.1-bin virtuoso-opensource-6.1-common
+        0 upgraded, 174 newly installed, 0 to remove and 0 not upgraded.
+        Need to get 124 MB of archives.
+        After this operation, 363 MB of additional disk space will be used.
+        
+        [[[ qpdfview ]]]
+           The following NEW packages will be installed:
+            libcupsfilters1 libcupsimage2 libdjvulibre-text libdjvulibre21 libgs9
+            libgs9-common libijs-0.35 libjbig2dec0 libpoppler-qt5-1 libspectre1
+            poppler-data qpdfview qpdfview-djvu-plugin qpdfview-ps-plugin
+            qpdfview-translations
+          0 upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
+          Need to get 6,892 kB of archives.
+          After this operation, 33.5 MB of additional disk space will be used
+          
+[[[[ mpv ]]]]            The following NEW packages will be installed:
+           libavfilter3 libavresample1 libbs2b0 libcdio-cdda1 libcdio-paranoia1
+           libguess1 libmowgli2 libmpg123-0 libquvi-scripts libquvi7 libsdl2-2.0-0
+           libva-glx1 libvdpau1 mpv
+           0 upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+           Need to get 1,377 kB of archives.
+           After this operation, 5,206 kB of additional disk space will be used.
+[[[[ wineasio wine-rt q4wine ]]]]
+          The following NEW packages will be installed:
+            binfmt-support cabextract cups-bsd cups-client cups-common fonts-droid
+            fonts-horai-umefont fonts-unfonts-core fonts-wqy-microhei libasound2-plugins
+            libcapi20-3 libfile-copy-recursive-perl libgeoclue0
+            libgstreamer-plugins-base0.10-0 libgstreamer0.10-0 libharfbuzz-icu0
+            libjavascriptcoregtk-3.0-0 libodbc1 libopenal-data libopenal1 libosmesa6
+            libqt4-sql-sqlite libsecret-1-0 libsecret-common libwebkitgtk-3.0-0
+            libwebkitgtk-3.0-common p7zip python-crypto python-ldb python-ntdb
+            python-samba python-tdb q4wine samba-common samba-common-bin smbclient
+            ttf-mscorefonts-installer ttf-unfonts-core ttf-wqy-microhei unixodbc
+            update-inetd update-notifier-common wine-gecko2.24 wine-mono4.5.2 wine-rt
+            wine-rt-i386 wineasio wineasio-i386 winetricks zenity zenity-common zip
+          0 upgraded, 52 newly installed, 0 to remove and 0 not upgraded.
+          Need to get 135 MB of archives.
+          After this operation, 425 MB of additional disk space will be used.
+          
+[[[ awesome-extra ]]] tiny
+sudo apt-get install awesome awesome-extra
+sudo apt-add-repository ppa:klaus-vormweg/awesome
+  
+((( filezilla )))
+        The following packages were automatically installed and are no longer required:
+          liba52-0.7.4 libbasicusageenvironment0 libcddb2 libchromaprint0
+          libcrystalhd3 libdc1394-22 libdca0 libdirac-encoder0 libdirectfb-1.2-9
+          libdvbpsi8 libebml4 libfaad2 libfreerdp1 libgnutls28 libgroupsock1
+          libhogweed2 libiso9660-8 libkate1 liblivemedia23 libmad0 libmatroska6
+          libmodplug1 libmpcdec6 libmpeg2-4 libmtp-common libmtp-runtime libmtp9
+          libnettle4 libproxy-tools libresid-builder0c2a libsidplay2 libssh2-1 libtar0
+          libts-0.0-0 libtwolame0 libupnp6 libusageenvironment1 libvcdinfo0
+          libxcb-composite0 libzvbi-common libzvbi0 tsconf
+        Use 'apt-get autoremove' to remove them.
+        The following extra packages will be installed:
+          filezilla-common libwxbase2.8-0 libwxgtk2.8-0
+        The following NEW packages will be installed:
+          filezilla filezilla-common libwxbase2.8-0 libwxgtk2.8-0
+        0 upgraded, 4 newly installed, 0 to remove and 6 not upgraded.
+        Need to get 7,449 kB of archives.
+        After this operation, 23.4 MB of additional disk space will be used.
+
+[[[[ carla-git carla-lv2  carla-bridge-linux32 cadence cadence-tools ]]]] tiny after all that
+[[[[ policykit-desktop-privileges ]]]]                                    dtiny after all that
